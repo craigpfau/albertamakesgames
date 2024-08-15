@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors';
+import colors from "tailwindcss/colors";
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -14,20 +14,30 @@ export default {
       white: "#ffffff",
       gray: colors.gray,
       indigo: colors.indigo,
-      neutral: colors.neutral,  // Used mainly for text color
+      neutral: colors.neutral, // Used mainly for text color
+      amg: {
+        charcoal: "#333333",
+        green: "#1abc9c",
+        purple: "#563d7c",
+        white: "#ffffff",
+        yellow: "#ffda23",
+      },
+      navtext: {
+        50: "#FFF",
+      },
       yellow: {
-        50: "#fefce8",
-        100: "#fef9c3",
-        400: "#facc15",
-        500: "#eab308",
+        50: "#563d7c", // purple
+        100: "#2C699A",
+        400: "#16DB93",
+        500: "#EFEA5A",
       }, // Accent colors, used mainly for star color, heading and buttons
       orange: {
-        100: "#ffedd5",
-        200: "#fed7aa",
-        300: "#fb713b",
-        400: "#fa5a15",
-        500: "#e14d0b",
-        600: "#ea580c",
+        100: "#54478C",
+        200: "#2C699A",
+        300: "#16DB93",
+        400: "#EFEA5A",
+        500: "#F1C453",
+        600: "#F29E4C",
       }, // Primary colors, used mainly for links, buttons and svg icons
       red: colors.red, // Used for bookmark icon
       zinc: colors.zinc, // Used mainly for box-shadow
@@ -37,6 +47,6 @@ export default {
   plugins: [
     require("tailwindcss/nesting"),
     require("preline/plugin"),
-    require("@tailwindcss/forms")
+    require("@tailwindcss/forms"),
   ],
 };

@@ -6,8 +6,8 @@ import Icon from "@components/ui/icons/Icon.astro";
 // Define props from Astro
 const { pricing } = Astro.props;
 
-// Define TypeScript type for products.
-type Product = {
+// Define TypeScript type for games.
+type Game = {
   name: string;
   description: string;
   price: string;
@@ -27,8 +27,8 @@ interface PricingSectionProps {
   pricing: {
     title: string;
     subTitle: string;
-    starterKit: Product;
-    professionalToolbox: Product;
+    starterKit: Game;
+    professionalToolbox: Game;
   };
 }
 ---
@@ -47,9 +47,9 @@ interface PricingSectionProps {
       {pricing.subTitle}
     </p>
   </div>
-  <!-- Contains two main product blocks -->
+  <!-- Contains two main game blocks -->
   <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-0">
-    <!-- Starter Kit product details -->
+    <!-- Starter Kit game details -->
     <div
       class="w-full rounded-xl bg-gray-800 p-6 sm:w-1/2 sm:rounded-r-none sm:p-8 lg:w-1/3"
     >

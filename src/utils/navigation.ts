@@ -1,10 +1,10 @@
 // An array of links for navigation bar
 const navBarLinks = [
   { name: "Home", url: "/" },
-  { name: "Products", url: "/products" },
-  { name: "Services", url: "/services" },
   { name: "Blog", url: "/blog" },
-  { name: "Contact", url: "/contact" },
+  { name: "Studios", url: "/studios" },
+  { name: "Games", url: "/games" },
+  { name: "Community", url: "/community" },
 ];
 // An array of links for footer
 const footerLinks = [
@@ -12,7 +12,7 @@ const footerLinks = [
     section: "Ecosystem",
     links: [
       { name: "Documentation", url: "/welcome-to-docs/" },
-      { name: "Tools & Equipment", url: "/products" },
+      { name: "Tools & Equipment", url: "/games" },
       { name: "Construction Services", url: "/services" },
     ],
   },

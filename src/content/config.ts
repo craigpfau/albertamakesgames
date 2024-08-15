@@ -56,7 +56,7 @@ const gamesCollection = defineCollection({
     }),
 });
 
-const blogCollection = defineCollection({
+const newsCollection = defineCollection({
   type: "content",
   schema: ({ image }) =>
     z.object({
@@ -90,6 +90,6 @@ const insightsCollection = defineCollection({
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
   games: gamesCollection,
-  blog: blogCollection,
+  news: newsCollection,
   insights: insightsCollection,
 };

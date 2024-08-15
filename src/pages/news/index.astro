@@ -1,16 +1,16 @@
 ---
 // Import necessary components, modules and types
 import MainLayout from "@/layouts/MainLayout.astro";
-import CardBlog from "@components/ui/cards/CardBlog.astro";
-import CardBlogRecent from "@components/ui/cards/CardBlogRecent.astro";
+import CardNews from "@components/ui/cards/CardNews.astro";
+import CardNewsRecent from "@components/ui/cards/CardNewsRecent.astro";
 import CardInsight from "@components/ui/cards/CardInsight.astro";
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { SITE } from "@data/constants";
 
-// Get all blogs post and sort them based on publish date
-const blogPosts: CollectionEntry<"blog">[] = (await getCollection("blog")).sort(
-  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+// Get all newss post and sort them based on publish date
+const newsPosts: CollectionEntry<"news">[] = (await getCollection("news")).sort(
+  (a: CollectionEntry<"news">, b: CollectionEntry<"news">) =>
     b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 // Get all insights posts
@@ -18,18 +18,18 @@ const insightPosts: CollectionEntry<"insights">[] =
   await getCollection("insights");
 
 // Separate the most recent post from others
-const mostRecentPost: CollectionEntry<"blog"> = blogPosts[0];
-const otherPosts: CollectionEntry<"blog">[] = blogPosts.slice(1);
+const mostRecentPost: CollectionEntry<"news"> = newsPosts[0];
+const otherPosts: CollectionEntry<"news">[] = newsPosts.slice(1);
 
 // Define variables for page content
 const title: string = "Your Gateway to Construction Excellence";
 const subTitle: string =
-  "Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our blog is your go-to resource for all things hardware and construction.";
+  "Explore the latest news, tips, and insights from ScrewFast to enhance your construction projects. From product spotlights to project management strategies, our news is your go-to resource for all things hardware and construction.";
 const secondTitle: string = "Insights";
 const secondSubTitle: string =
   "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts. ";
 
-const pageTitle: string = `Blog | ${SITE.title}`;
+const pageTitle: string = `News | ${SITE.title}`;
 ---
 
 <MainLayout
@@ -37,9 +37,9 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   structuredData={{
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "@id": "https://screwfast.uk/blog",
-    "url": "https://screwfast.uk/blog",
-    "name": "Blog | ScrewFast",
+    "@id": "https://screwfast.uk/news",
+    "url": "https://screwfast.uk/news",
+    "name": "News | ScrewFast",
     "description": "Stay up-to-date with the latest trends and developments in the construction industry with insights from ScrewFast's team of industry experts.",
     "isPartOf": {
       "@type": "WebSite",
@@ -72,16 +72,16 @@ const pageTitle: string = `Blog | ${SITE.title}`;
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <!--Blog posts grid-->
+    <!--News posts grid-->
     <div class="grid gap-6 lg:grid-cols-2">
-      {otherPosts.map((blogEntry) => <CardBlog blogEntry={blogEntry} />)}
+      {otherPosts.map((newsEntry) => <CardNews newsEntry={newsEntry} />)}
     </div>
   </section>
-  <!--Most recent blog post-->
+  <!--Most recent news post-->
   <section
     class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
   >
-    <CardBlogRecent blogEntry={mostRecentPost} />
+    <CardNewsRecent newsEntry={mostRecentPost} />
   </section>
   <!--Insights section-->
   <section

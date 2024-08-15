@@ -4,18 +4,18 @@ import { Image } from "astro:assets";
 
 import type { CollectionEntry } from "astro:content";
 
-const { blogEntry } = Astro.props;
+const { newsEntry } = Astro.props;
 
 interface Props {
-  blogEntry: CollectionEntry<"blog">;
+  newsEntry: CollectionEntry<"news">;
 }
 ---
 
 <div class="flex-shrink-0">
   <Image
     class="size-10 rounded-full sm:h-14 sm:w-14"
-    src={blogEntry.data.authorImage}
-    alt={blogEntry.data.authorImageAlt}
+    src={newsEntry.data.authorImage}
+    alt={newsEntry.data.authorImageAlt}
     draggable={"false"}
     format={"avif"}
   />
